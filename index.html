@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Modern Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .interactive-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-changer {
+            margin: 20px 0;
+        }
+
+        .color-btn {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .color-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .counter {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4a5568;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to My Website</h1>
+            <p class="subtitle">A simple, modern web experience</p>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>About</h2>
+                <p>This is a simple website built with HTML, CSS, and JavaScript. It features modern design elements like glassmorphism effects, smooth animations, and interactive components.</p>
+                <button class="btn" onclick="showAlert()">Learn More</button>
+            </div>
+
+            <div class="card">
+                <h2>Features</h2>
+                <p>• Responsive design that works on all devices<br>
+                   • Modern glassmorphism styling<br>
+                   • Smooth hover animations<br>
+                   • Interactive JavaScript elements</p>
+                <button class="btn" onclick="toggleCard(this)">Toggle Info</button>
+            </div>
+
+            <div class="card">
+                <h2>Contact</h2>
+                <p>Feel free to reach out if you have any questions or would like to collaborate on a project.</p>
+                <button class="btn" onclick="showContact()">Get in Touch</button>
+            </div>
+        </div>
+
+        <div class="interactive-section">
+            <h2>Interactive Demo</h2>
+            <p>Try out these interactive features:</p>
+            
+            <div class="color-changer">
+                <p>Change background color:</p>
+                <button class="color-btn" style="background: #ff6b6b; color: white;" onclick="changeBackground('#ff6b6b', '#ff8e8e')">Red</button>
+                <button class="color-btn" style="background: #4ecdc4; color: white;" onclick="changeBackground('#4ecdc4', '#6ee6dd')">Teal</button>
+                <button class="color-btn" style="background: #45b7d1; color: white;" onclick="changeBackground('#45b7d1', '#74c7e3')">Blue</button>
+                <button class="color-btn" style="background: #96ceb4; color: white;" onclick="changeBackground('#96ceb4', '#b5d4c6')">Green</button>
+                <button class="color-btn" style="background: #667eea; color: white;" onclick="resetBackground()">Reset</button>
+            </div>
+
+            <div>
+                <p>Click counter:</p>
+                <div class="counter" id="counter">0</div>
+                <button class="btn" onclick="incrementCounter()">Click Me!</button>
+                <button class="btn" onclick="resetCounter()" style="margin-left: 10px;">Reset</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Simple Website. Made with ❤️ using HTML, CSS & JavaScript</p>
+        </footer>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        function showAlert() {
+            alert('This is a simple website demo! It showcases modern web design principles with clean code and interactive elements.');
+        }
+
+        function toggleCard(button) {
+            const card = button.parentElement;
+            const isHidden = card.style.opacity === '0.5';
+            
+            if (isHidden) {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+                button.textContent = 'Toggle Info';
+            } else {
+                card.style.opacity = '0.5';
+                card.style.transform = 'scale(0.95)';
+                button.textContent = 'Show Info';
+            }
+        }
+
+        function showContact() {
+            const email = 'hello@example.com';
+            const message = `Contact Information:\n\nEmail: ${email}\nPhone: +1 (555) 123-4567\nLocation: Your City, Your Country`;
+            alert(message);
+        }
+
+        function changeBackground(color1, color2) {
+            document.body.style.background = `linear-gradient(135deg, ${color1} 0%, ${color2} 100%)`;
+        }
+
+        function resetBackground() {
+            document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        }
+
+        function incrementCounter() {
+            clickCount++;
+            document.getElementById('counter').textContent = clickCount;
+  
+            const counter = document.getElementById('counter');
+            counter.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                counter.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        function resetCounter() {
+            clickCount = 0;
+            document.getElementById('counter').textContent = clickCount;
+        }
+
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.6s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
